@@ -56,8 +56,7 @@ public class Network_Manager : MonoBehaviourPunCallbacks
         Debug.Log("Joined a Room.");
         base.OnJoinedRoom();
     }
-
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
         Debug.Log("A New Player Joined The Room.");
         base.OnPlayerEnteredRoom(newPlayer);

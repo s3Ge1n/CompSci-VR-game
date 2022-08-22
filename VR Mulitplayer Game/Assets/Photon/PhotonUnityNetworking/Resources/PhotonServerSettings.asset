@@ -44,6 +44,9 @@ MonoBehaviour:
   - HeresWhy
   - setColor
   - RPC_SetColor
+  - blood
+  - color
+  - Enemy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

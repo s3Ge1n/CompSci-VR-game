@@ -228,6 +228,8 @@ GameObject:
   - component: {fileID: 669620484633141937}
   - component: {fileID: 4973261697420736569}
   - component: {fileID: 5694673030896279048}
+  - component: {fileID: 8493643349915374126}
+  - component: {fileID: 3517804175445240093}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -300,6 +302,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8493643349915374126
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473861165700426257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999997
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000011920929, z: 0}
+--- !u!54 &3517804175445240093
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473861165700426257}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1965645855865014761
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +710,7 @@ GameObject:
   - component: {fileID: 4208859178111428090}
   - component: {fileID: 900161961978118837}
   - component: {fileID: 614390605033061208}
+  - component: {fileID: 8048792883238150667}
   m_Layer: 0
   m_Name: Network Player
   m_TagString: Untagged
@@ -769,6 +802,20 @@ MonoBehaviour:
   AutoCreateRecorderIfNotFound: 0
   UsePrimaryRecorder: 1
   SetupDebugSpeaker: 0
+--- !u!114 &8048792883238150667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631569840924772626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc8efb69ace4bf4495f78638336c1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  head: {fileID: 1483102378239845656}
 --- !u!1 &4398200053631927487
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +923,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1483102378239845656}
   - component: {fileID: 3667977978464782375}
-  - component: {fileID: 8269583791419761792}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -917,18 +963,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &8269583791419761792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8043793168672612846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5fe911aae18cb74384185fc22975951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &209795507277949744
 PrefabInstance:
   m_ObjectHideFlags: 0
