@@ -6,27 +6,33 @@ using Photon.Pun;
 
 public class PaintballGun : Weapon
 {
-    //[SerializeField] private Projectile bulletPrefab;
-    [SerializeField] public string bulletPrefab;
+    private PhotonView photonView;
+    [SerializeField] private Projectile bulletPrefab;
+    //[SerializeField] public string bulletPrefab;
 
-    protected override void StartShooting(XRBaseInteractor interactor)
+    protected override void StartShooting(ActivateEventArgs arg0)
     {
-        base.StartShooting(interactor);
+        base.StartShooting(arg0);
         Shoot();
     }
 
     protected override void Shoot()
     {
         base.Shoot();
-        GameObject projectileInstanceGameObject = PhotonNetwork.Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        //Projectile projectileInstance = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        Projectile projectileInstance = projectileInstanceGameObject.GetComponent<Projectile>();
-        projectileInstance.Init(this); //projectileInstanceGameObject
+        //GameObject projectileInstanceGameObject = PhotonNetwork.Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        photonView.RPC("shootBullet", RpcTarget.All, bulletSpawn.position, bulletSpawn.rotation);
+    }
+
+    [PunRPC]
+    void shootBullet(Vector3 position, Quaternion rotation)
+    {
+        Projectile projectileInstance = Instantiate(bulletPrefab, position, rotation);
+        projectileInstance.Init(this);
         projectileInstance.Launch();
     }
 
-    protected override void StopShooting(XRBaseInteractor interactor)
+    protected override void StopShooting(DeactivateEventArgs arg0)
     {
-        base.StopShooting(interactor);
+        base.StopShooting(arg0);
     }
 }

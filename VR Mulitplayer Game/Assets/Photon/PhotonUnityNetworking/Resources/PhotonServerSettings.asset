@@ -47,6 +47,7 @@ MonoBehaviour:
   - blood
   - color
   - Enemy
+  - shootBullet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

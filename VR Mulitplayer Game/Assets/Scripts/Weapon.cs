@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(XRGrabNetworkInteractable))]
+[RequireComponent(typeof(DoubleXRGrabInteractable))]
 public class Weapon : MonoBehaviour
 {
     [SerializeField] protected float shootingForce;
@@ -25,32 +26,18 @@ public class Weapon : MonoBehaviour
 
     private void SetupInteractableWeaponEvents()
     {
-        //interactableWeapon.activated.AddListener(StartShooting);
-        //interactableWeapon.deactivated.AddListener(StopShooting);
-    
-        interactableWeapon.onActivate.AddListener(StartShooting);
-        interactableWeapon.onDeactivate.AddListener(StopShooting);
+        interactableWeapon.activated.AddListener(StartShooting);
+        interactableWeapon.deactivated.AddListener(StopShooting);
     }
 
-    /*
-    private void StopShooting(DeactivateEventArgs arg0)
+    protected virtual void StopShooting(DeactivateEventArgs arg0)
     {
-       throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
-    private void StartShooting(ActivateEventArgs arg0)
+    protected virtual void StartShooting(ActivateEventArgs arg0)
     {
-       throw new NotImplementedException();
-    }
-    */
-    protected virtual void StartShooting(XRBaseInteractor interactor)
-    {
-       throw new NotImplementedException();
-    }
-
-    protected virtual void StopShooting(XRBaseInteractor interactor)
-    {
-       throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     protected virtual void Shoot()

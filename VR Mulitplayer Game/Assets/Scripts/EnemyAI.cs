@@ -23,8 +23,8 @@ public class EnemyAI : MonoBehaviourPun, ITakeDamage
     [SerializeField] private float shootingAccuracy;
 
     [SerializeField] private Transform shootingPositing;
-    [SerializeField] private ParticleSystem bloodSplatterFX;
-    //[SerializeField] private string bloodSplatterFX;
+    //[SerializeField] private ParticleSystem bloodSplatterFX;
+    [SerializeField] private string bloodSplatterFX;
 
     private bool isShooting;
     private int currentShotsTaken;
@@ -138,18 +138,22 @@ public class EnemyAI : MonoBehaviourPun, ITakeDamage
     public void TakeDamage(Weapon weapon, Projectile projectile, Vector3 contactPoint)
     {
         health -= weapon.GetDamage();
-        if (health <= 0) Destroy(gameObject);
-        photonView.RPC("blood",
-                       RpcTarget.AllBuffered,
-                       contactPoint,
-                       Quaternion.LookRotation(weapon.transform.position - contactPoint));
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+        //photonView.RPC("blood", RpcTarget.All, contactPoint, Quaternion.LookRotation(weapon.transform.position - contactPoint));
+        GameObject effect = PhotonNetwork.Instantiate(bloodSplatterFX, contactPoint, Quaternion.LookRotation(weapon.transform.position - contactPoint));
+        effect.GetComponent<ParticleSystem>().Stop();
+        effect.GetComponent<ParticleSystem>().Play();
+
     }
 
-    [PunRPC]
+    /*[PunRPC]
     void blood(Vector3 contactPoint, Quaternion rotation)
     {
         ParticleSystem effect = Instantiate(bloodSplatterFX, contactPoint, rotation);
         effect.Stop();
         effect.Play();
-    }
+    }*/
 }

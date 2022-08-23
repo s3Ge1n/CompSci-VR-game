@@ -14,16 +14,18 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         float g = Random.Range(0f, 1f);
         float b = Random.Range(0f, 1f);
         spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
-        photonView.RPC("color", RpcTarget.AllBuffered, r, g, b);
+        photonView.RPC("color", RpcTarget.AllBuffered, r, g, b, spawnedPlayerPrefab);
     }
 
     [PunRPC]
-    void color(float r, float g, float b)
+    void color(float r, float g, float b, GameObject spawnedPlayerPrefab)
     {
+        Color customColor = new Color(r, g, b, 1f);
         foreach (Renderer rend in spawnedPlayerPrefab.GetComponentsInChildren<Renderer>())
         {
-            rend.material.color = new Color(r, g, b, 1f);
+            rend.material.SetColor("_Color", customColor);
         }
+        //spawnedPlayerPrefab.GetComponentInChildren<Renderer>().material.color = new Color(r, g, b, 1f);
     }
 
     public override void OnLeftRoom()

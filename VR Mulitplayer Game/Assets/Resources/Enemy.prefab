@@ -2065,9 +2065,9 @@ MonoBehaviour:
   maxShotsToTake: 10
   rotationSpeed: 180
   damage: 20
-  shootingAccuracy: 100
+  shootingAccuracy: 75.5
   shootingPositing: {fileID: 2017470249}
-  bloodSplatterFX: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bloodSplatterFX: FX_BloodSplatter
 --- !u!195 &5512232159822098553
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2252,31 +2252,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.37842745
+      value: 0.41290852
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.44567376
+      value: -0.49408525
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4721762
+      value: 0.44233966
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.65970993
+      value: -0.6242772
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 16.6
+      value: 8.294
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 80.58
+      value: 83.01
       objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -106.22
+      value: -105.695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}

@@ -22,10 +22,9 @@ public class RaycastPaintballGun : Weapon
         wait = new WaitForSeconds(1 / fireRate);
         projectile.Init(this);
     }
-
-    protected override void StartShooting(XRBaseInteractor interactor)
+    protected override void StartShooting(ActivateEventArgs arg0)
     {
-        base.StartShooting(interactor);
+        base.StartShooting(arg0);
         StartCoroutine(ShootingCO());
     }
 
@@ -45,9 +44,9 @@ public class RaycastPaintballGun : Weapon
         projectile.Launch();
     }
 
-    protected override void StopShooting(XRBaseInteractor interactor)
+    protected override void StopShooting(DeactivateEventArgs arg0)
     {
-        base.StopShooting(interactor);
+        base.StopShooting(arg0);
         StopAllCoroutines();
     }
 }
