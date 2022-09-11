@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(AudioSource))]
 public class RaycastPaintballGun : Weapon
 {
+    [SerializeField] private AudioClip _gunShot;
     [SerializeField] float fireRate;
+    private AudioSource _gunSource;
     private Projectile projectile;
 
     private WaitForSeconds wait;
@@ -19,6 +22,7 @@ public class RaycastPaintballGun : Weapon
 
     private void Start()
     {
+        _gunSource = GetComponent<AudioSource>();
         wait = new WaitForSeconds(1 / fireRate);
         projectile.Init(this);
     }
@@ -41,6 +45,7 @@ public class RaycastPaintballGun : Weapon
     protected override void Shoot()
     {
         base.Shoot();
+        _gunSource.PlayOneShot(_gunShot);
         projectile.Launch();
     }
 

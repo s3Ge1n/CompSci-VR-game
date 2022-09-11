@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 85761014}
   - component: {fileID: 85761013}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Controlls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,10 +161,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controls: \n- left joysic to move\n- right joystick to turn \n- reach
-    to right shoulder and grab for arrow\n- once arrow is knocked let go then grab
-    string and pull back to fire\n- to return to lobby press left menu button\n-
-    grab grey dispenser for ball'
+  m_text: 'Controls: \n- left joysic to move\n- right joystick to snap turn \n- reach
+    to right shoulder and grab for arrow with grip\n- once arrow is knocked let go
+    then grab string and pull back to fire\n- white hanging targets are for bow practice
+    from podium cylinder\n- play hand ball with hand collision physics\n- to return
+    to lobby press left menu button\n- grab grey dispenser for tennis and hand ball
+    balls\n- if you are kicked from a room this means you have been shot to death
+    by an enemy\n- grab the paintball guns will the grip button, then grab the other
+    handel with the other hand\n- to fire paintball gun press trigger of hand on
+    main contact point\n- Room 1 and 3 contain, archery, tennis and handball\n- Room
+    2 contains the paintball teambased fps'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -227,7 +233,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -10.747025, y: 0, z: -52.988403, w: 0}
+  m_margin: {x: -10.747025, y: 0, z: -81.151405, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -285,17 +291,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85761012}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -89.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 89.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.41, y: 34.7}
+  m_AnchoredPosition: {x: -15.21, y: 53}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &93012587
@@ -658,7 +664,7 @@ Transform:
   m_GameObject: {fileID: 135016723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2374, y: 2.2374, z: 2.2374}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2092,13 +2098,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697411150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64842945, y: 0.6198511, z: 8.498094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10.448093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 882077328}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &697411153
 MonoBehaviour:
@@ -2161,8 +2167,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1891740738}
+  - {fileID: 697411152}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974585180
 GameObject:
@@ -2273,12 +2280,12 @@ MonoBehaviour:
       m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 
+      m_Id: 41a3fb23-a377-40a5-82fa-158147f303b9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 
+        m_Id: ba7995c7-92f0-46f1-9b7b-5e9fe4e4cc89
         m_Path: <XRHMD>/centerEyePosition
         m_Interactions: 
         m_Processors: 
@@ -2293,12 +2300,12 @@ MonoBehaviour:
       m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: 
+      m_Id: 97ca7f6a-b14d-42b7-801f-bd1c9aa901b6
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 
+        m_Id: 1028ddf9-9f0d-4841-9572-1be3aa2b8c49
         m_Path: <XRHMD>/centerEyeRotation
         m_Interactions: 
         m_Processors: 
