@@ -1,1 +1,1 @@
-"A VR survival game with Leonardo Davinci Inventions" 
+A social multiplayer VR game with minigames including handball, tennis, archery, and paintball for people to play with friends.
