@@ -8,7 +8,6 @@ using Unity.XR.CoreUtils;
 using System;
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviourPun
 {
     public LayerMask groundLayer;
@@ -25,10 +24,11 @@ public class Player : MonoBehaviourPun
     private AudioSource _painSource;
     private Vector2 inputAxis;
     private float fallingSpeed;
-    private int gravity = -10;
+    private float gravity = -9.8f;
 
     public void TakeDamage(float damage)
     {
+        _painSource.PlayOneShot(_painGrunt);
         health -= damage;
         Debug.LogError(string.Format("Player health: {0}", health));
         if (health <= 0)
@@ -36,7 +36,6 @@ public class Player : MonoBehaviourPun
             PhotonNetwork.Disconnect();
             PhotonNetwork.LoadLevel(0);
         }
-        _painSource.PlayOneShot(_painGrunt);
     }
 
     public Vector3 GetHeadPosition()
@@ -75,12 +74,11 @@ public class Player : MonoBehaviourPun
     {
         character.height = origin.CameraInOriginSpaceHeight + heightOffset;
         Vector3 capsuleCenter = transform.InverseTransformPoint(origin.CameraInOriginSpacePos);
-        character.center = new Vector3(capsuleCenter.x, character.height / 2 + character.skinWidth, capsuleCenter.z);
+        character.center = new Vector3(capsuleCenter.x, (character.height / 2) + character.skinWidth, capsuleCenter.z);
     }
 
     private void Update()
     {
-        _painSource.PlayOneShot(_painGrunt);
         InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
         device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
     }

@@ -478,7 +478,7 @@ MonoBehaviour:
   m_MoveSpeed: 2
   m_EnableStrafe: 1
   m_UseGravity: 1
-  m_GravityApplicationMode: 0
+  m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 0}
   m_LeftHandMoveAction:
     m_UseReference: 1
@@ -1572,7 +1572,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 57023dfb48ca2294e903886d4225e2cb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2314,7 +2314,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5b6bb883199850f4ea31ea5bd06aaf03, type: 3}
 --- !u!23 &733220689
@@ -4157,6 +4157,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0017, y: 0.0017, z: 0.050495703}
   m_Center: {x: 0, y: 0, z: 0.0256}
+--- !u!1 &1146261106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3876646928625444775, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+  m_PrefabInstance: {fileID: 1276376738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1215479429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4476,6 +4481,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 579531656}
     m_Modifications:
+    - target: {fileID: 1276376742, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276376742, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276376744, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010164176898769744, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010164176898769744, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: _painGrunt
+      value: 
+      objectReference: {fileID: 8300000, guid: a6897f2532ec85042a1d484e60845fd7, type: 3}
     - target: {fileID: 3876646928625444773, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4520,11 +4545,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3876646928625444774, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3876646928625444775, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1276376744, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
 --- !u!4 &1276376739 stripped
 Transform:
@@ -4536,12 +4566,108 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2010164176898769744, guid: 8a1fe2473986b754c92315cd8668a11e, type: 3}
   m_PrefabInstance: {fileID: 1276376738}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1146261106}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dc8efb69ace4bf4495f78638336c1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1276376744
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146261106}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a6897f2532ec85042a1d484e60845fd7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1292384281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7377,7 +7503,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 059e0382b8bc85645b4bbd4b98bb90c0, type: 3}
 --- !u!1001 &1986433320881991244
@@ -8196,7 +8322,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5b6bb883199850f4ea31ea5bd06aaf03, type: 3}
 --- !u!64 &7733603620433762331
@@ -8210,7 +8336,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f76ba9d22b6776e43b0208e873d28605, type: 3}
 --- !u!4 &7756993090895268745

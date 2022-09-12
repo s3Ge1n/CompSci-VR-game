@@ -2065,7 +2065,7 @@ MonoBehaviour:
   maxShotsToTake: 10
   rotationSpeed: 180
   damage: 20
-  shootingAccuracy: 75.5
+  shootingAccuracy: 75
   shootingPositing: {fileID: 2017470249}
   bloodSplatterFX: FX_BloodSplatter
 --- !u!195 &5512232159822098553
